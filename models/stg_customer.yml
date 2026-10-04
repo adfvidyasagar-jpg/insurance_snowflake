@@ -12,6 +12,7 @@ models:
         tests:
           - not_null
           - unique
+          
 
       - name: CUSTOMER_NUMBER
         description: "Business customer number"
@@ -37,3 +38,7 @@ models:
                 values:
                   - Male
                   - Female
+
+      - name: CUSTOMER_SINCE
+        tests:
+          - is_not_future_date
