@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: insurance_raw
+    database: INSURANCE_DB
+    schema: RAW
+
+    tables:
+
+      - name: customer
+        description: "Raw customer master data"
+
+        columns:
+
+          - name: CUSTOMER_ID
+            description: "Unique identifier for the customer"
+            tests:
+              - not_null
+              - unique
+
+          - name: CUSTOMER_NUMBER
+            description: "Business identifier assigned to the customer"
+            tests:
+              - not_null
+              - unique
+
+          - name: FIRST_NAME
+            description: "Customer first name"
+            tests:
+              - not_null
+
+          - name: LAST_NAME
+            description: "Customer last name"
+            tests:
+              - not_null
+
+          - name: GENDER
+            description: "Customer gender"
+            tests:
+              - accepted_values:
+                  arguments:
+                    values:
+                      - Male
+                      - Female

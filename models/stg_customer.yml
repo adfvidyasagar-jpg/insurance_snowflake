@@ -1,0 +1,44 @@
+version: 2
+
+models:
+
+  - name: stg_customer
+    description: "Staging model for customer data"
+
+    columns:
+
+      - name: CUSTOMER_ID
+        description: "Unique identifier for the customer"
+        tests:
+          - not_null
+          - unique
+          
+
+      - name: CUSTOMER_NUMBER
+        description: "Business customer number"
+        tests:
+          - not_null
+          - unique
+
+      - name: FIRST_NAME
+        description: "Customer first name"
+        tests:
+          - not_null
+
+      - name: LAST_NAME
+        description: "Customer last name"
+        tests:
+          - not_null
+
+      - name: GENDER
+        description: "Customer gender"
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Male
+                  - Female
+
+      - name: CUSTOMER_SINCE
+        tests:
+          - is_not_future_date
