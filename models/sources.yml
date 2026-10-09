@@ -6,7 +6,7 @@ sources:
     schema: RAW
 
     tables:
-
+      - name: customer_incremental_source
       - name: customer
         description: "Raw customer master data"
 
