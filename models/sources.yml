@@ -7,6 +7,7 @@ sources:
 
     tables:
       - name: customer_incremental_source
+      - name: customer_snapshot_source
       - name: customer
         description: "Raw customer master data"
 
