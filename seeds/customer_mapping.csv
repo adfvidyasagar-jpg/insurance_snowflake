@@ -1,0 +1,5 @@
+customer_status,status_description
+ACTIVE,Customer is active
+INACTIVE,Customer is inactive
+SUSPENDED,Customer account is suspended
+CLOSED,Customer account is closed
